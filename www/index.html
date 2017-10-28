@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src * 'self' 'unsafe-inline'; media-src 'self' blob: ; img-src * 'self' data: https:" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+      
+    </style>
+        <title>Final Project</title>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+        
+        <h1 style="text-align:center; background-color: pink">Rotate The Phone</h1>
+ 
+        <img style="display:none;width:400px;height:400px;" id="myImage" src="" />
+        <a href="#page2" style="color:hotpink;background-color: grey;" ><button>Print</button></a>
+        </div>
+
+        <div data-role="page" id="page2" style="color:pink;">
+            <h1> ENTER YOUR INFORMATION </h1>
+       <form name="myForm" onsubmit="return foo()">
+       <input name="name" placeholder="What is your name?" class="name" required />     
+       <input name="emailaddress" placeholder="What is your email?" class="email" type="email" required />
+       <input name="contact" placeholder="What is your contact no.?" class="email" type="text" required />
+       <input name="copies" placeholder="Number of copies?" class="email" type="text" required />
+       <select name="size" class="email">
+       <option value="20">32*40</option>
+       <option value="10">8*10</option>
+       </select>
+ 
+       <input type="button" onClick="foo()" value="submit" />
+       <script> 
+        function foo(){
+        var c = document.forms["myForm"]["copies"].value;
+        var s = document.forms["myForm"]["size"].value;
+        var z = c*s;
+        var r = confirm('Total amount is '+z+'$');
+        if(r == true){
+         alert('print starting');
+         window.location.assign('index.html')
+        }else{
+    
+        window.location.assign('index.html')
+        }
+        }
+   </script>
+</form>
+</div>
+        
+    </body>
+</html>
+
+
+
